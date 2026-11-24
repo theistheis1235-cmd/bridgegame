@@ -239,7 +239,9 @@ const circle = {
     vy:0,
 }
 let steps = 40;
-
+function setSteps(number) {
+    steps = number;
+}
 let circlemass = 1;
 let broken = 0;
 let first = true;

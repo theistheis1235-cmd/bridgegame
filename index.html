@@ -34,6 +34,15 @@
         </div>
         <p id="nodes">Nodes:0</p>
         <p>Instructions: Space to pause/unpause<br>click to place/destroy<br>0 to toggle place/destroy<br>arrows left and right to change mass</p>
+        <p>Performance modes (higher steps = better physics but worse performace)</p>
+        <p>Higher performace makes bridges stronger</p>
+        <div class="button-group">
+            <button onclick="setSteps(10)">10</button>
+            <button onclick="setSteps(20)">20</button>
+            <button onclick="setSteps(30)">30</button>
+            <button onclick="setSteps(40)">40</button>
+            <button onclick="setSteps(80)">80</button>
+        </div>
     </body>
     
     <script src="bridgegame.js"></script>
