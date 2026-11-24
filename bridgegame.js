@@ -238,7 +238,7 @@ const circle = {
     vx:0,
     vy:0,
 }
-let steps = 20;
+let steps = 40;
 
 let circlemass = 1;
 let broken = 0;
