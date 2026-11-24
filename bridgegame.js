@@ -257,7 +257,7 @@ function tick() {
     ctx.fillStyle = "#afa0ff";
     ctx.fillRect(0, 0, 500, 500);
     drawCircle(mouseX, mouseY, 5, "#ff0000");
-    document.getElementById('nodes').textContent = `Nodes:${nodes.length-6}, Broken:${broken}, Mass:${circlemass}`
+    document.getElementById('nodes').textContent = `Nodes:${nodes.length-6}, Broken:${broken}, Mass:${circlemass}, Steps:${steps}`
     for(const node2 of nodes) {
         if(!deleting) {
             let dist = Math.sqrt((mouseX-node2.x)**2 + (mouseY-node2.y)**2);
