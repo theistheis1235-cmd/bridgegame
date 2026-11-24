@@ -1,0 +1,40 @@
+<html>
+    <style>
+        body {
+            background-color: #202520;
+            display: grid;
+            align-items: center;
+            place-items: center;
+            white-space: nowrap;
+            
+        }
+        p {
+            color: white;
+        }
+        button {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .button-group {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+    </style>
+    
+    <body>
+        <canvas width="500" height="500" id="canvas"></canvas>
+        <div class="button-group">
+            <button onclick="clearNodes()">Clear</button>
+            <button onclick="saveNumber(1)">Save 1</button>
+            <button onclick="loadNumber(1)">Load 1</button>
+            <button onclick="saveNumber(2)">Save 2</button>
+            <button onclick="loadNumber(2)">Load 2</button>
+            <button onclick="saveNumber(3)">Save 3</button>
+            <button onclick="loadNumber(3)">Load 3</button>
+        </div>
+        <p id="nodes">Nodes:0</p>
+        <p>Instructions: Space to pause/unpause<br>click to place/destroy<br>0 to toggle place/destroy<br>arrows left and right to change mass</p>
+    </body>
+    
+    <script src="bridgegame.js"></script>
+</html>
