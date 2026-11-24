@@ -240,7 +240,11 @@ const circle = {
 }
 let steps = 40;
 function setSteps(number) {
+    localStorage.setItem('steps', steps);
     steps = number;
+}
+if(localStorage.getItem('steps')) {
+    steps = parseInt(localStorage.getItem('steps'));
 }
 let circlemass = 1;
 let broken = 0;
