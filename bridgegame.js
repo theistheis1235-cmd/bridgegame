@@ -240,13 +240,17 @@ const circle = {
 }
 let steps = 40;
 function setSteps(number) {
-    localStorage.setItem('steps', steps);
+    
     steps = number;
+    localStorage.setItem('steps', steps);
 }
 if(localStorage.getItem('steps')) {
     steps = parseInt(localStorage.getItem('steps'));
 }
 let circlemass = 1;
+if(localStorage.getItem('mass')) {
+    circlemass = parseInt(localStorage.getItem('mass'));
+}
 let broken = 0;
 let first = true;
 function tick() {
@@ -486,9 +490,11 @@ document.onkeydown = (event) => {
     }
     if(event.key == 'ArrowLeft' && circlemass >1) {
         circlemass -= 1;
+        localStorage.setItem('mass', circlemass);
     }
     if(event.key == 'ArrowRight') {
         circlemass += 1;
+        localStorage.setItem('mass', circlemass);
     }
 }
 const nodescopy = [];
