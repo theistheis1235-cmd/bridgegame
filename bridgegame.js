@@ -253,10 +253,19 @@ if(localStorage.getItem('mass')) {
 }
 let broken = 0;
 let first = true;
+let timer = 0;
 function tick() {
     if(first) {
         
     }
+    if(!frozen) {
+        timer++;
+    }
+    else{
+        timer=0;
+    }
+    document.getElementById('counter').textContent = (((30-(timer/60)) > 0) ? (30-Math.round(timer/60)) : (circle.y<450 ? 'win' : 'lose'));
+    if(circle.y>450) document.getElementById('counter').textContent = 'lose';
     first = false;
     ctx.fillStyle = "#afa0ff";
     ctx.fillRect(0, 0, 500, 500);
@@ -433,27 +442,19 @@ function loadNumber(number) {
 }
 document.onkeydown = (event) => {
     if(event.key == "a") {
-        for(const node of nodes) {
-            node.vx -= 0.1;
-        }
+        
         circle.vx -= 0.05;
     }
     if(event.key == "d") {
-        for(const node of nodes) {
-            node.vx += 0.1;
-        }
+        
         circle.vx += 0.05;
     }
     if(event.key == "w") {
-        for(const node of nodes) {
-            node.vy -= 0.1;
-        }
-        circle.vy -= 0.05;
+        
+        circle.vy -= 0.2;
     }
     if(event.key == "s") {
-        for(const node of nodes) {
-            node.vy += 0.1;
-        }
+        
         circle.vy += 0.05;
     }
     if(event.key == 'c') {
